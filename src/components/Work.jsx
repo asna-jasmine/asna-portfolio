@@ -48,7 +48,8 @@ const Work = () => {
             >
               EduGuide
             </h2>
-            <p className="mt-4 text-lg text-[#6E5A4B] leading-8 max-w-2xl font-light break-words">
+            {/* Fixed header description: added w-full and max-w restrictions for mobile/desktop */}
+            <p className="mt-4 text-lg text-[#6E5A4B] leading-8 max-w-full sm:max-w-2xl font-light break-words">
               A case study focused on solving real student problems through thoughtful UX research and user-centered design.
             </p>
           </div>
@@ -56,17 +57,20 @@ const Work = () => {
 
         {/* ---------------- MAIN PROJECT CARD ---------------- */}
         <ScrollReveal delay={0.3}>
-          <div className="bg-white rounded-[40px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] p-8 lg:p-12 border border-[#F0EAE4] overflow-hidden relative w-full">
+          <div className="bg-white rounded-[40px] shadow-[0_20px_60px_rgba(0,0,0,0.06)] p-6 sm:p-8 lg:p-12 border border-[#F0EAE4] overflow-hidden relative w-full">
             <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
               
-              {/* LEFT SIDE - PREMIUM FLOATING PHONES */}
-              <div className="relative flex justify-center items-center min-h-[300px] md:min-h-[400px] lg:min-h-[500px] w-full">
+              {/* ========================================================== */}
+              {/* LEFT SIDE - PREMIUM FLOATING PHONES (FIXED MOBILE CENTERING) */}
+              {/* ========================================================== */}
+              {/* Changed from fixed absolute to relative/flex-col on mobile (md:flex-row) to perfectly center and scale phones on small screens */}
+              <div className="relative flex flex-col md:flex-row justify-center items-center min-h-[250px] sm:min-h-[350px] lg:min-h-[500px] w-full">
                 
                 {/* Phone 1 (Back - Slightly rotated) */}
                 <motion.div
                   animate={{ y: [-10, 10, -10] }}
                   transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                  className="relative md:absolute left-0 lg:left-4 top-10 z-10 rotate-[-6deg] mx-auto md:mx-0 w-[160px] sm:w-[200px] lg:w-[240px] mt-4 md:mt-0"
+                  className="relative md:absolute left-0 lg:left-4 top-10 z-10 rotate-[-6deg] mx-auto mt-0 md:mt-0 w-[140px] sm:w-[180px] lg:w-[240px]"
                 >
                   <div className="aspect-[9/19.5] rounded-[32px] lg:rounded-[38px] bg-gradient-to-br from-[#3a3a3a] via-[#1c1c1c] to-[#2a2a2a] p-[3px] shadow-[0_20px_40px_rgba(0,0,0,0.15),inset_0_2px_4px_rgba(255,255,255,0.1)]">
                     <div className="relative w-full h-full rounded-[29px] lg:rounded-[35px] bg-black overflow-hidden">
@@ -84,7 +88,7 @@ const Work = () => {
                 <motion.div
                   animate={{ y: [10, -10, 10] }}
                   transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-                  className="relative md:absolute right-0 lg:right-4 bottom-10 z-20 rotate-[4deg] mx-auto md:mx-0 w-[180px] sm:w-[220px] lg:w-[240px] -mt-6 md:mt-0"
+                  className="relative md:absolute right-0 lg:right-4 bottom-10 z-20 rotate-[4deg] mx-auto -mt-10 md:mt-0 w-[150px] sm:w-[200px] lg:w-[240px]"
                 >
                   <div className="aspect-[9/19.5] rounded-[32px] lg:rounded-[38px] bg-gradient-to-br from-[#3a3a3a] via-[#1c1c1c] to-[#2a2a2a] p-[3px] shadow-[0_25px_50px_rgba(0,0,0,0.2),inset_0_2px_4px_rgba(255,255,255,0.1)]">
                     <div className="relative w-full h-full rounded-[29px] lg:rounded-[35px] bg-black overflow-hidden">
@@ -99,9 +103,10 @@ const Work = () => {
                 </motion.div>
 
               </div>
+              {/* ========================================================== */}
 
               {/* RIGHT SIDE - CONTENT */}
-              <div className="flex flex-col justify-center w-full">
+              <div className="flex flex-col justify-center w-full min-w-0">
                 <h3 className="text-4xl lg:text-5xl text-[#3D2C1E] font-bold tracking-[-0.02em] break-words">
                   EduGuide
                 </h3>
@@ -110,13 +115,14 @@ const Work = () => {
                 </p>
                 
                 {/* ========================================================== */}
-                {/* FIXED: Paragraph 1 - Full width on mobile, break-words added */}
-                <p className="text-[#6E5A4B] leading-6 sm:leading-7 lg:leading-8 font-light mt-6 w-full sm:max-w-md break-words text-sm sm:text-base lg:text-lg">
+                {/* FIXED: Paragraph 1 - Removed max-w-md on mobile to prevent clipping. */}
+                {/* ========================================================== */}
+                <p className="text-[#6E5A4B] leading-6 sm:leading-7 lg:leading-8 font-light mt-6 w-full lg:max-w-md break-words text-sm sm:text-base lg:text-lg">
                   EduGuide helps students explore career paths, discover scholarships, and make informed academic decisions through a simple and intuitive mobile experience.
                 </p>
                 {/* ========================================================== */}
 
-                {/* TAGS - Reduced padding from px-4 to px-3 to prevent overflow on 375px */}
+                {/* TAGS */}
                 <div className="flex flex-wrap gap-2 mt-8 w-full">
                   {['User Research', 'Personas', 'User Flow', 'Wireframes', 'Prototype', 'UI Design'].map((tag) => (
                     <span key={tag} className="bg-[#F5EDE8] text-[#6E5A4B] px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-[#EAE0D8] whitespace-nowrap">
@@ -179,7 +185,9 @@ const Work = () => {
           </ScrollReveal>
         </div>
 
-        {/* ---------------- UX PROCESS TIMELINE ---------------- */}
+        {/* ========================================================== */}
+        {/* UX PROCESS TIMELINE (FIXED MOBILE VERTICAL LAYOUT) */}
+        {/* ========================================================== */}
         <div className="mt-24 lg:mt-32 text-center w-full">
           <ScrollReveal delay={0.2}>
             <h3 className="text-3xl lg:text-4xl text-[#3D2C1E] font-bold tracking-[-0.02em] mb-16 break-words">
@@ -187,26 +195,26 @@ const Work = () => {
             </h3>
           </ScrollReveal>
 
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-center relative max-w-5xl mx-auto w-full">
+          {/* Added flex-col on mobile (md:flex-row) to handle vertical/horizontal switching */}
+          <div className="flex flex-col md:flex-row justify-between items-center md:items-center relative max-w-5xl mx-auto w-full">
+            
             {/* Background Connecting Line */}
-            <div className="absolute top-8 md:top-1/2 left-0 w-full h-[1px] bg-[#EAE0D8] -z-10 hidden md:block"></div>
-            <div className="absolute top-8 left-1/2 w-[1px] h-[80%] bg-[#EAE0D8] -z-10 md:hidden"></div>
+            {/* On mobile: left-8 creates a vertical line down the left side. On desktop: top-1/2 creates a horizontal line across the middle */}
+            <div className="absolute left-8 md:left-0 md:top-1/2 w-[1px] md:w-full h-[calc(100%-3rem)] md:h-[1px] bg-[#EAE0D8] -z-10"></div>
 
             {['Research', 'Survey', 'Personas', 'Wireframes', 'High Fidelity UI', 'Prototype'].map((step, index) => (
               <ScrollReveal key={step} delay={0.3 + index * 0.1}>
-                <div className="flex flex-col items-center w-full md:w-auto mb-10 md:mb-0 relative">
-                  <div className="w-12 h-12 rounded-full bg-[#F5EDE8] border-2 border-[#DBCEC2] flex items-center justify-center text-[#3D2C1E] font-bold shadow-sm z-10">
+                <div className="flex flex-row md:flex-col items-center w-full md:w-auto mb-8 md:mb-0 relative pl-12 md:pl-0 md:pr-4">
+                  
+                  {/* Timeline Dot/Circle */}
+                  <div className="absolute left-0 md:static w-12 h-12 rounded-full bg-[#F5EDE8] border-2 border-[#DBCEC2] flex items-center justify-center text-[#3D2C1E] font-bold shadow-sm z-10">
                     {index + 1}
                   </div>
-                  <p className="mt-4 text-[#6E5A4B] font-medium text-sm tracking-wide break-words text-center">
+                  
+                  <p className="ml-4 md:ml-0 md:mt-4 text-[#6E5A4B] font-medium text-sm tracking-wide break-words text-left md:text-center">
                     {step}
                   </p>
-                  
-                  {/* Mobile Vertical Line connector (Avoids double line on last item) */}
-                  {index !== 5 && (
-                    <div className="block md:hidden absolute top-12 left-1/2 -translate-x-1/2 w-[1px] h-10 bg-[#EAE0D8]"></div>
-                  )}
-                  
+
                   {/* Desktop Arrow connector (Avoids arrow on last item) */}
                   {index !== 5 && (
                     <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-[#DBCEC2] text-2xl font-thin">
@@ -218,6 +226,7 @@ const Work = () => {
             ))}
           </div>
         </div>
+        {/* ========================================================== */}
 
       </div>
     </section>

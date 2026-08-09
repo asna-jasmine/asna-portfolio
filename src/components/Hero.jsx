@@ -8,14 +8,14 @@ import {
 } from "react-icons/fa";
 import { HiDownload } from "react-icons/hi";
 import { MdOutlineArrowForward } from "react-icons/md";
-import { FiMenu, FiX } from "react-icons/fi"; // Added mobile menu icons
+import { FiMenu, FiX } from "react-icons/fi";
 
 import heroPhone1 from "../assets/images/hero-phone1.png";
 import heroPhone2 from "../assets/images/hero-phone2.png";
 
 const Hero = () => {
   const [activeItem, setActiveItem] = useState("Home");
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Mobile menu state
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navItems = [
     { name: "Home", id: "home" },
@@ -27,7 +27,7 @@ const Hero = () => {
 
   const handleNavClick = (item) => {
     setActiveItem(item.name);
-    setIsMenuOpen(false); // Close mobile menu on click
+    setIsMenuOpen(false);
     const sectionId = item.id;
     document.getElementById(sectionId)?.scrollIntoView({
       behavior: "smooth",
@@ -124,10 +124,9 @@ const Hero = () => {
       {/* ====================================================== */}
 
       {/* ==================== BACKGROUND BLEND ==================== */}
-      {/* All new decorative elements are placed here, beneath the z-10 content */}
       <div className="absolute inset-0 pointer-events-none z-0">
         
-        {/* EXISTING SOFT BLOBS (Kept intact, slightly scaled down to let lines breathe) */}
+        {/* EXISTING SOFT BLOBS */}
         <motion.div {...floatBlob(12, 0)} className="absolute top-[-10%] left-[-8%] w-[450px] h-[450px] rounded-full" style={{ background: "radial-gradient(circle, #E8D5C4 0%, transparent 70%)", filter: "blur(150px)", opacity: 0.25 }} />
         <motion.div {...floatBlob(15, 2)} className="absolute top-[20%] left-[10%] w-[350px] h-[350px] rounded-full" style={{ background: "radial-gradient(circle, #F0E2D8 0%, transparent 70%)", filter: "blur(180px)", opacity: 0.2 }} />
         <motion.div {...floatBlob(18, 4)} className="absolute top-[30%] right-[10%] w-[500px] h-[500px] rounded-full" style={{ background: "radial-gradient(circle, #EADDD3 0%, transparent 70%)", filter: "blur(200px)", opacity: 0.25 }} />
@@ -137,11 +136,7 @@ const Hero = () => {
         {/* SUBTLE PAPER TEXTURE OVERLAY */}
         <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='1'/%3E%3C/svg%3E")`, backgroundRepeat: 'repeat', backgroundSize: '256px 256px' }} />
 
-        {/* ====================================================== */}
-        {/* NEW EDITORIAL LINE ART & WATERMARK */}
-        {/* ====================================================== */}
-
-        {/* TYPOGRAPHIC WATERMARK - "DESIGN" */}
+        {/* EDITORIAL LINE ART & WATERMARK */}
         <div className="hidden lg:block absolute top-[15%] right-[-5%] select-none">
           <span 
             className="text-[22rem] font-bold text-[#8B6B4F] opacity-[0.04] leading-none tracking-[-0.05em]"
@@ -152,22 +147,13 @@ const Hero = () => {
             DESIGN
           </span>
         </div>
-
-        {/* EDITORIAL CURVE 1 - Upper Right Arc */}
         <div className="absolute top-20 right-0 w-64 h-64 border-r-[1px] border-t-[1px] border-[#8B6B4F] rounded-tr-[120px] opacity-[0.08]"></div>
-        
-        {/* EDITORIAL CURVE 2 - Behind Phones/Right Center (Large sweeping curve) */}
         <div className="absolute top-[40%] right-[5%] w-96 h-64 border-r-[1px] border-b-[1px] border-[#8B6B4F] rounded-br-[160px] opacity-[0.06]"></div>
         <div className="absolute top-[30%] right-[10%] w-40 h-24 border-r-[1px] border-t-[1px] border-[#8B6B4F] rounded-tr-[60px] opacity-[0.05]"></div>
-
-        {/* EDITORIAL CURVE 3 - Bottom Right Corner Accent */}
         <div className="absolute bottom-24 right-0 w-48 h-48 border-r-[1px] border-b-[1px] border-[#8B6B4F] rounded-br-[100px] opacity-[0.07]"></div>
-
-        {/* ABSTRACT DOTS - Minimal editorial accents */}
         <div className="absolute top-24 right-12 w-1.5 h-1.5 rounded-full bg-[#8B6B4F] opacity-[0.08]"></div>
         <div className="absolute bottom-32 right-8 w-1 h-1 rounded-full bg-[#8B6B4F] opacity-[0.06]"></div>
         
-        {/* ====================================================== */}
       </div>
       {/* ====================================================== */}
 
@@ -227,15 +213,15 @@ const Hero = () => {
               <MdOutlineArrowForward />
             </motion.button>
             <motion.a
-  href="/ASNA_JASMINE.S_Resume.pdf"
-  download="ASNA_JASMINE.S_Resume.pdf"
-  className="bg-white border border-[#DDD] px-8 py-4 rounded-full flex items-center gap-2 shadow-sm hover:shadow-md transition-all"
-  whileHover={{ scale: 1.05 }}
-  whileTap={{ scale: 0.95 }}
->
-  <HiDownload />
-  Download Resume
-</motion.a>
+              href="/ASNA_JASMINE.S_Resume.pdf"
+              download="ASNA_JASMINE.S_Resume.pdf"
+              className="bg-white border border-[#DDD] px-8 py-4 rounded-full flex items-center gap-2 shadow-sm hover:shadow-md transition-all"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <HiDownload />
+              Download Resume
+            </motion.a>
           </div>
 
           {/* SOCIAL - ICONS ONLY */}
@@ -305,7 +291,14 @@ const Hero = () => {
             }}
           />
 
+          {/* ============================================================ */}
           {/* PHONE 2 - Background (Slightly rotated, offset upward & right) */}
+          {/* ============================================================ */}
+          {/* 
+             FIX: On mobile (below sm), we reduce the width, remove the right-offset 
+             so it centers perfectly, and add a slight negative top margin to hide the 
+             gap between the phones.
+          */}
           <motion.div
             animate={{ y: [10, -10, 10] }}
             transition={{
@@ -316,22 +309,26 @@ const Hero = () => {
             className="absolute top-[-10px] right-[-5px] sm:top-[-20px] sm:right-[-5px] lg:top-[-30px] lg:right-[-20px] z-10 rotate-[6deg]"
           >
             {/* Premium Phone Frame */}
-            <div className="relative w-[200px] sm:w-[240px] lg:w-[280px] aspect-[9/19.5] rounded-[32px] sm:rounded-[38px] lg:rounded-[44px] bg-gradient-to-br from-[#3a3a3a] via-[#1c1c1c] to-[#2a2a2a] p-[3px] shadow-[0_20px_50px_rgba(0,0,0,0.25),inset_0_2px_4px_rgba(255,255,255,0.1)]">
+            <div className="relative w-[160px] sm:w-[240px] lg:w-[280px] aspect-[9/19.5] rounded-[32px] sm:rounded-[38px] lg:rounded-[44px] bg-gradient-to-br from-[#3a3a3a] via-[#1c1c1c] to-[#2a2a2a] p-[3px] shadow-[0_20px_50px_rgba(0,0,0,0.25),inset_0_2px_4px_rgba(255,255,255,0.1)]">
               <div className="relative w-full h-full rounded-[29px] sm:rounded-[35px] lg:rounded-[41px] bg-black overflow-hidden">
-                {/* Screen Content (Edgeless with object-cover) */}
                 <img
                   src={heroPhone2}
                   alt="EduGuide App Screen 2"
                   className="w-full h-full object-cover object-center rounded-[29px] sm:rounded-[35px] lg:rounded-[41px]"
                 />
-                
-                {/* Dynamic Island (Notch) - Kept small and in visible area */}
                 <div className="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-[28%] h-[3.5%] bg-black rounded-full shadow-[inset_0_0_4px_rgba(255,255,255,0.15)]"></div>
               </div>
             </div>
           </motion.div>
+          {/* ============================================================ */}
 
+          {/* ============================================================ */}
           {/* PHONE 1 - Main/Front (Upright, larger, in front) */}
+          {/* ============================================================ */}
+          {/* 
+             FIX: On mobile (below sm), we scale it down slightly so it doesn't 
+             push against the viewport edges, while keeping it perfectly centered.
+          */}
           <motion.div
             animate={{ y: [-10, 10, -10] }}
             transition={{
@@ -342,20 +339,19 @@ const Hero = () => {
             className="relative z-20"
           >
             {/* Premium Phone Frame */}
-            <div className="relative w-[220px] sm:w-[260px] lg:w-[310px] aspect-[9/19.5] rounded-[36px] sm:rounded-[42px] lg:rounded-[48px] bg-gradient-to-br from-[#3a3a3a] via-[#1c1c1c] to-[#2a2a2a] p-[3px] shadow-[0_30px_70px_rgba(0,0,0,0.35),0_10px_20px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.15)]">
+            <div className="relative w-[180px] sm:w-[260px] lg:w-[310px] aspect-[9/19.5] rounded-[36px] sm:rounded-[42px] lg:rounded-[48px] bg-gradient-to-br from-[#3a3a3a] via-[#1c1c1c] to-[#2a2a2a] p-[3px] shadow-[0_30px_70px_rgba(0,0,0,0.35),0_10px_20px_rgba(0,0,0,0.2),inset_0_1px_2px_rgba(255,255,255,0.15)]">
               <div className="relative w-full h-full rounded-[33px] sm:rounded-[39px] lg:rounded-[45px] bg-black overflow-hidden">
-                {/* Screen Content (Edgeless with object-cover) */}
                 <img
                   src={heroPhone1}
                   alt="EduGuide App Screen 1"
                   className="w-full h-full object-cover object-center rounded-[33px] sm:rounded-[39px] lg:rounded-[45px]"
                 />
-                
-                {/* Dynamic Island (Notch) - Kept small and in visible area */}
                 <div className="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-[28%] h-[3.5%] bg-black rounded-full shadow-[inset_0_0_4px_rgba(255,255,255,0.15)]"></div>
               </div>
             </div>
           </motion.div>
+          {/* ============================================================ */}
+
         </motion.div>
         {/* ============================================================ */}
 
