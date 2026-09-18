@@ -6,6 +6,10 @@ import { MdOutlineArrowForward } from 'react-icons/md';
 // IMPORT YOUR PHONE MOCKUPS HERE
 import heroPhone1 from "../assets/images/hero-phone1.png";
 import heroPhone2 from "../assets/images/hero-phone2.png";
+import wordpressMobileHome from "../assets/images/wordpress-view-1.png";
+import wordpressMobileAbout from "../assets/images/wordpress-view-2.png";
+import wordpressDesktopAbout from "../assets/images/wordpress-view-3.png";
+import wordpressDesktopHome from "../assets/images/wordpress-view-4.png";
 
 const Work = () => {
   // Animation wrapper for scroll-reveal
@@ -225,7 +229,238 @@ const Work = () => {
               </ScrollReveal>
             ))}
           </div>
+                </div>
+        {/* ========================================================== */}
+
+
+        {/* ========================================================== */}
+        {/* WORDPRESS WEB PROJECT */}
+        {/* ========================================================== */}
+
+        <div className="mt-24 lg:mt-32 w-full">
+
+          {/* Project Heading */}
+          <ScrollReveal delay={0.2}>
+            <div className="text-center mb-12 lg:mb-16">
+
+              <p className="text-sm uppercase tracking-[0.2em] text-[#8A7565] mb-4">
+                Web Project
+              </p>
+
+              <h3 className="text-3xl lg:text-4xl text-[#3D2C1E] font-bold tracking-[-0.02em]">
+                EduGuide — Educational & Career Guidance Website
+              </h3>
+
+              <p className="max-w-2xl mx-auto mt-5 text-[#6E5A4B] text-base lg:text-lg leading-relaxed font-light">
+                A responsive educational and career guidance website implemented
+                using WordPress, inspired by the EduGuide UI/UX concept.
+              </p>
+
+            </div>
+          </ScrollReveal>
+
+
+          {/* Project Overview */}
+          <ScrollReveal delay={0.3}>
+            <div className="bg-white border border-[#F0EAE4] rounded-[32px] p-6 sm:p-8 lg:p-10 shadow-[0_10px_30px_rgba(0,0,0,0.03)]">
+
+              <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+
+                {/* Text */}
+                <div>
+
+                  <p className="text-sm uppercase tracking-[0.15em] text-[#9C7B63] mb-3">
+                    WordPress Implementation
+                  </p>
+
+                  <h4 className="text-2xl lg:text-3xl font-semibold text-[#3D2C1E] mb-5">
+                    From UI/UX Concept to Website
+                  </h4>
+
+                  <p className="text-[#6E5A4B] leading-7 font-light">
+                    I implemented the EduGuide concept as a responsive website
+                    using WordPress. The project helped me explore website
+                    structure, navigation, page layouts, content sections,
+                    typography and responsive presentation while applying my
+                    UI/UX design knowledge.
+                  </p>
+
+                  {/* Skills */}
+                  <div className="flex flex-wrap gap-2 mt-7">
+                    {[
+                      'WordPress',
+                      'Web Design',
+                      'Responsive Design',
+                      'UI/UX',
+                      'Navigation',
+                      'Page Layout'
+                    ].map((tag) => (
+                      <span
+                        key={tag}
+                        className="bg-[#F5EDE8] text-[#6E5A4B] px-3 py-1.5 rounded-full text-xs sm:text-sm font-medium border border-[#EAE0D8]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Website Button */}
+                  <div className="mt-8">
+
+                    <motion.a
+                      href="https://eduguidecareer.wordpress.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="bg-[#3D2C1E] text-white px-7 py-3.5 rounded-full inline-flex items-center justify-center gap-2 shadow-lg hover:shadow-xl transition-all"
+                      whileHover={{ scale: 1.03 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      View Website
+                      <MdOutlineArrowForward />
+                    </motion.a>
+
+                  </div>
+
+                </div>
+
+
+                {/* Desktop Screenshots Preview */}
+                <div className="grid grid-cols-2 gap-4 items-center">
+
+                  <div className="rounded-2xl overflow-hidden border border-[#EAE0D8] shadow-sm bg-[#FCFAF8]">
+                    <img
+                      src={wordpressDesktopHome}
+                      alt="EduGuide WordPress website desktop home page"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+
+                  <div className="rounded-2xl overflow-hidden border border-[#EAE0D8] shadow-sm bg-[#FCFAF8]">
+                    <img
+                      src={wordpressDesktopAbout}
+                      alt="EduGuide WordPress website desktop about page"
+                      className="w-full h-auto object-cover"
+                    />
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+          </ScrollReveal>
+
+
+          {/* Responsive Screenshots */}
+          {/* Responsive Screenshots */}
+<ScrollReveal delay={0.4}>
+  <div className="mt-12 lg:mt-16">
+
+    {/* Section Heading */}
+    <div className="text-center mb-10 lg:mb-12">
+
+      <p className="text-sm uppercase tracking-[0.15em] text-[#9C7B63] mb-3">
+        Responsive Experience
+      </p>
+
+      <h4 className="text-2xl lg:text-3xl font-semibold text-[#3D2C1E]">
+        Designed for Desktop & Mobile
+      </h4>
+
+      <p className="text-[#6E5A4B] mt-3 font-light max-w-xl mx-auto">
+        The website adapts its layout and content presentation across
+        different screen sizes.
+      </p>
+
+    </div>
+
+
+    {/* Desktop Screenshots */}
+    <div className="mb-12 lg:mb-16">
+
+      <h5 className="text-lg font-semibold text-[#3D2C1E] mb-5 text-center">
+        Desktop
+      </h5>
+
+      <div className="grid md:grid-cols-2 gap-5 max-w-6xl mx-auto">
+
+        <div className="bg-white border border-[#EAE0D8] rounded-[24px] p-3 shadow-sm overflow-hidden">
+          <img
+            src={wordpressDesktopHome}
+            alt="EduGuide WordPress desktop home page"
+            className="w-full h-auto rounded-[16px]"
+          />
         </div>
+
+        <div className="bg-white border border-[#EAE0D8] rounded-[24px] p-3 shadow-sm overflow-hidden">
+          <img
+            src={wordpressDesktopAbout}
+            alt="EduGuide WordPress desktop about page"
+            className="w-full h-auto rounded-[16px]"
+          />
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {/* Mobile Screenshots */}
+    <div>
+
+      <h5 className="text-lg font-semibold text-[#3D2C1E] mb-5 text-center">
+        Mobile
+      </h5>
+
+      <div className="flex justify-center gap-6 sm:gap-10">
+
+        {/* Mobile Home */}
+        <div className="bg-white border border-[#EAE0D8] rounded-[28px] p-3 sm:p-4 shadow-sm w-[145px] sm:w-[180px]">
+          <img
+            src={wordpressMobileHome}
+            alt="EduGuide WordPress mobile home page"
+            className="w-full h-auto rounded-[20px]"
+          />
+        </div>
+
+        {/* Mobile About */}
+        <div className="bg-white border border-[#EAE0D8] rounded-[28px] p-3 sm:p-4 shadow-sm w-[145px] sm:w-[180px]">
+          <img
+            src={wordpressMobileAbout}
+            alt="EduGuide WordPress mobile about page"
+            className="w-full h-auto rounded-[20px]"
+          />
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</ScrollReveal>
+
+
+          {/* Learning / Outcome */}
+          <ScrollReveal delay={0.5}>
+            <div className="mt-10 lg:mt-12 bg-[#FCFAF8] border border-[#F0EAE4] rounded-[28px] p-7 lg:p-9">
+
+              <h4 className="text-xl lg:text-2xl font-semibold text-[#3D2C1E] mb-3">
+                What I Learned
+              </h4>
+
+              <p className="text-[#6E5A4B] leading-7 font-light">
+                This project gave me practical exposure to WordPress and helped
+                me understand how a UI/UX concept can be translated into a
+                structured web experience. I worked with pages, navigation,
+                content sections, layouts and responsive presentation while
+                continuing to build my web design skills.
+              </p>
+
+            </div>
+          </ScrollReveal>
+
+        </div>
+
         {/* ========================================================== */}
 
       </div>
