@@ -212,16 +212,17 @@ const Hero = () => {
               Explore Projects
               <MdOutlineArrowForward />
             </motion.button>
-            <motion.a
-              href="/ASNA_JASMINE.S_Resume.pdf"
-              download="ASNA_JASMINE.S_Resume.pdf"
-              className="bg-white border border-[#DDD] px-8 py-4 rounded-full flex items-center gap-2 shadow-sm hover:shadow-md transition-all"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <HiDownload />
-              Download Resume
-            </motion.a>
+           <motion.a
+  href="/ASNA_JASMINE.S_Resume.pdf"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="bg-white border border-[#DDD] px-8 py-4 rounded-full flex items-center gap-2 shadow-sm hover:shadow-md transition-all"
+  whileHover={{ scale: 1.05 }}
+  whileTap={{ scale: 0.95 }}
+>
+  <HiDownload />
+  View Resume
+</motion.a>
           </div>
 
           {/* SOCIAL - ICONS ONLY */}
