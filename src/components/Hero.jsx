@@ -12,7 +12,7 @@ import { FiMenu, FiX } from "react-icons/fi";
 
 import heroPhone1 from "../assets/images/hero-phone1.png";
 import heroPhone2 from "../assets/images/hero-phone2.png";
-
+import resume from "../assets/files/Asna_Jasmine_S_Resume.pdf";
 const Hero = () => {
   const [activeItem, setActiveItem] = useState("Home");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -213,7 +213,7 @@ const Hero = () => {
               <MdOutlineArrowForward />
             </motion.button>
            <motion.a
-  href="/ASNA_JASMINE.S_Resume.pdf"
+  href={resume}
   target="_blank"
   rel="noopener noreferrer"
   className="bg-white border border-[#DDD] px-8 py-4 rounded-full flex items-center gap-2 shadow-sm hover:shadow-md transition-all"
